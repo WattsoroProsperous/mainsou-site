@@ -101,13 +101,13 @@ export default function Services() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <span className="text-xs font-medium text-muted-light uppercase tracking-widest">
+          <span className="text-sm font-medium text-muted-light uppercase tracking-widest">
             Ce que nous faisons
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+          <h2 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
             Nos Services
           </h2>
-          <p className="mt-4 max-w-2xl text-lg text-muted leading-relaxed">
+          <p className="mt-4 max-w-2xl text-xl text-muted leading-relaxed">
             Des solutions technologiques sur mesure pour transformer votre
             entreprise et accélérer votre croissance digitale.
           </p>
@@ -130,10 +130,10 @@ export default function Services() {
                 {service.icon}
               </div>
 
-              <h3 className="mt-4 text-lg font-semibold text-foreground">
+              <h3 className="mt-4 text-xl font-semibold text-foreground">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed">
+              <p className="mt-2 text-base text-muted leading-relaxed">
                 {service.desc}
               </p>
 
@@ -141,7 +141,7 @@ export default function Services() {
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-surface-alt px-2.5 py-0.5 text-xs font-medium text-muted-light"
+                    className="rounded-full bg-surface-alt px-3 py-1 text-sm font-medium text-muted-light"
                   >
                     {tag}
                   </span>

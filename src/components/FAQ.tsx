@@ -44,13 +44,13 @@ export default function FAQ() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-4 lg:sticky lg:top-24 lg:self-start"
           >
-            <span className="text-xs font-medium text-muted-light uppercase tracking-widest">
+            <span className="text-sm font-medium text-muted-light uppercase tracking-widest">
               Questions fréquentes
             </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+            <h2 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
               FAQ
             </h2>
-            <p className="mt-4 text-base text-muted leading-relaxed">
+            <p className="mt-4 text-lg text-muted leading-relaxed">
               Les réponses aux questions les plus courantes sur nos services et
               notre façon de travailler.
             </p>
@@ -69,7 +69,7 @@ export default function FAQ() {
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   className="flex items-center justify-between w-full py-5 text-left"
                 >
-                  <span className="text-base font-medium text-foreground pr-4">
+                  <span className="text-lg font-medium text-foreground pr-4">
                     {faq.q}
                   </span>
                   <svg
@@ -93,7 +93,7 @@ export default function FAQ() {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-5 text-sm text-muted leading-relaxed">
+                      <p className="pb-5 text-base text-muted leading-relaxed">
                         {faq.a}
                       </p>
                     </motion.div>

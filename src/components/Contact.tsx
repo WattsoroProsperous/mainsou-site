@@ -69,13 +69,13 @@ export default function Contact() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-xs font-medium text-muted-light uppercase tracking-widest">
+            <span className="text-sm font-medium text-muted-light uppercase tracking-widest">
               Parlons de votre projet
             </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+            <h2 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
               Contactez-nous
             </h2>
-            <p className="mt-4 text-lg text-muted leading-relaxed mb-10">
+            <p className="mt-4 text-xl text-muted leading-relaxed mb-10">
               Vous avez un projet en tête ? Discutons ensemble de la meilleure
               solution pour atteindre vos objectifs.
             </p>
@@ -87,7 +87,7 @@ export default function Contact() {
                     {info.icon}
                   </div>
                   <div>
-                    <span className="block text-xs font-medium uppercase tracking-wider text-muted-light mb-0.5">
+                    <span className="block text-sm font-medium uppercase tracking-wider text-muted-light mb-0.5">
                       {info.label}
                     </span>
                     {info.href ? (
@@ -119,57 +119,57 @@ export default function Contact() {
             className="rounded-2xl border border-border bg-white p-8 sm:p-10 shadow-sm space-y-6"
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
+              <label htmlFor="name" className="block text-base font-medium text-foreground mb-1.5">
                 Nom complet
               </label>
               <input
                 id="name"
                 type="text"
                 required
-                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
+                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-base text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
                 placeholder="Votre nom"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
+              <label htmlFor="email" className="block text-base font-medium text-foreground mb-1.5">
                 Email
               </label>
               <input
                 id="email"
                 type="email"
                 required
-                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
+                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-base text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
                 placeholder="votre@email.com"
               />
             </div>
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-1.5">
+              <label htmlFor="subject" className="block text-base font-medium text-foreground mb-1.5">
                 Sujet
               </label>
               <input
                 id="subject"
                 type="text"
                 required
-                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
+                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-base text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
                 placeholder="L'objet de votre message"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
+              <label htmlFor="message" className="block text-base font-medium text-foreground mb-1.5">
                 Message
               </label>
               <textarea
                 id="message"
                 rows={5}
                 required
-                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20 resize-y"
+                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-base text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20 resize-y"
                 placeholder="Décrivez votre projet..."
               />
             </div>
             <button
               type="submit"
               disabled={submitted}
-              className={`w-full flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-medium text-white transition-colors ${
+              className={`w-full flex items-center justify-center gap-2 rounded-lg py-3.5 text-base font-medium text-white transition-colors ${
                 submitted
                   ? "bg-emerald-600"
                   : "bg-foreground hover:bg-foreground/90"

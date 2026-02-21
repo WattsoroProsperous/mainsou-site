@@ -49,7 +49,7 @@ export default function Partners() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-sm text-muted-light text-center mb-8"
+        className="text-base text-muted-light text-center mb-8"
       >
         Ils nous font confiance
       </motion.p>

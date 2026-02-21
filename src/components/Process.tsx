@@ -57,13 +57,13 @@ export default function Process() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <span className="text-xs font-medium text-muted-light uppercase tracking-widest">
+          <span className="text-sm font-medium text-muted-light uppercase tracking-widest">
             Notre méthodologie
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+          <h2 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
             Notre Processus
           </h2>
-          <p className="mt-4 max-w-2xl text-lg text-muted leading-relaxed">
+          <p className="mt-4 max-w-2xl text-xl text-muted leading-relaxed">
             Une approche structurée et éprouvée pour garantir le succès de
             chaque projet.
           </p>
@@ -81,10 +81,10 @@ export default function Process() {
               <div className="text-4xl font-semibold text-accent/15 leading-none">
                 {step.number}
               </div>
-              <h3 className="mt-3 text-base font-semibold text-foreground">
+              <h3 className="mt-3 text-lg font-semibold text-foreground">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed">
+              <p className="mt-2 text-base text-muted leading-relaxed">
                 {step.desc}
               </p>
             </motion.div>

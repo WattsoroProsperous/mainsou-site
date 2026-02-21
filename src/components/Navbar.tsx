@@ -78,7 +78,7 @@ export default function Navbar() {
                 height={36}
                 className="h-9 w-auto"
               />
-              <span className="text-base font-semibold text-foreground tracking-tight">
+              <span className="text-lg font-semibold text-foreground tracking-tight">
                 Mainsou <span className="text-accent">ESN</span>
               </span>
             </a>
@@ -92,7 +92,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleClick(item.href);
                   }}
-                  className={`px-3 py-2 text-sm font-medium transition-colors duration-150 ${
+                  className={`px-3 py-2 text-[15px] font-medium transition-colors duration-150 ${
                     activeSection === item.href.slice(1)
                       ? "text-foreground"
                       : "text-muted hover:text-foreground"
@@ -109,7 +109,7 @@ export default function Navbar() {
                 e.preventDefault();
                 handleClick("#contact");
               }}
-              className="hidden md:inline-flex items-center rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-foreground/90"
+              className="hidden md:inline-flex items-center rounded-lg bg-foreground px-5 py-2.5 text-[15px] font-medium text-white transition-colors hover:bg-foreground/90"
             >
               Nous Contacter
             </a>
@@ -159,7 +159,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 + 0.1 }}
-                className="py-4 text-lg font-medium text-foreground border-b border-border-light"
+                className="py-4 text-xl font-medium text-foreground border-b border-border-light"
               >
                 {item.label}
               </motion.a>
@@ -173,7 +173,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 }}
-              className="mt-8 rounded-lg bg-foreground px-6 py-3 text-center text-base font-medium text-white"
+              className="mt-8 rounded-lg bg-foreground px-6 py-3.5 text-center text-lg font-medium text-white"
             >
               Nous Contacter
             </motion.a>

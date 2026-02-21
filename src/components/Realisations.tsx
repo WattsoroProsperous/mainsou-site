@@ -102,13 +102,13 @@ export default function Realisations() {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <span className="text-xs font-medium text-muted-light uppercase tracking-widest">
+          <span className="text-sm font-medium text-muted-light uppercase tracking-widest">
             Notre portfolio
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+          <h2 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
             Nos Réalisations
           </h2>
-          <p className="mt-4 max-w-2xl text-lg text-muted leading-relaxed">
+          <p className="mt-4 max-w-2xl text-xl text-muted leading-relaxed">
             Découvrez une sélection de projets réalisés pour nos clients à
             travers différents secteurs.
           </p>
@@ -119,7 +119,7 @@ export default function Realisations() {
             <button
               key={f.key}
               onClick={() => setActiveFilter(f.key)}
-              className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
+              className={`rounded-full px-5 py-2 text-base font-medium transition-all duration-200 ${
                 activeFilter === f.key
                   ? "bg-foreground text-white"
                   : "text-muted hover:text-foreground"
@@ -152,16 +152,16 @@ export default function Realisations() {
                   />
                 </div>
 
-                <div className="p-5">
+                <div className="p-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-base font-semibold text-foreground">
+                    <h3 className="text-lg font-semibold text-foreground">
                       {project.title}
                     </h3>
-                    <span className="rounded-full bg-accent-light px-2.5 py-0.5 text-xs font-medium text-accent">
+                    <span className="rounded-full bg-accent-light px-3 py-1 text-sm font-medium text-accent">
                       {project.tag}
                     </span>
                   </div>
-                  <p className="text-sm text-muted leading-relaxed">
+                  <p className="text-base text-muted leading-relaxed">
                     {project.desc}
                   </p>
                 </div>

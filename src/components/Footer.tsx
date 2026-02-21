@@ -30,18 +30,18 @@ export default function Footer() {
                 height={32}
                 className="h-8 w-auto"
               />
-              <span className="text-sm font-semibold text-foreground">
+              <span className="text-base font-semibold text-foreground">
                 Mainsou <span className="text-accent">ESN</span>
               </span>
             </div>
-            <p className="text-sm text-muted leading-relaxed max-w-xs">
+            <p className="text-base text-muted leading-relaxed max-w-xs">
               Entreprise ivoirienne de services numériques. Innovation, qualité
               et accompagnement sur mesure depuis 2020.
             </p>
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-light mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-muted-light mb-4">
               Navigation
             </h4>
             <ul className="space-y-2.5">
@@ -49,7 +49,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="text-sm text-muted hover:text-foreground transition-colors"
+                    className="text-base text-muted hover:text-foreground transition-colors"
                   >
                     {item.label}
                   </a>
@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-light mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-muted-light mb-4">
               Services
             </h4>
             <ul className="space-y-2.5">
@@ -67,7 +67,7 @@ export default function Footer() {
                 <li key={s}>
                   <a
                     href="#services"
-                    className="text-sm text-muted hover:text-foreground transition-colors"
+                    className="text-base text-muted hover:text-foreground transition-colors"
                   >
                     {s}
                   </a>
@@ -77,10 +77,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-muted-light mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-muted-light mb-4">
               Contact
             </h4>
-            <ul className="space-y-2.5 text-sm text-muted">
+            <ul className="space-y-2.5 text-base text-muted">
               <li>
                 <a href="tel:+2250143848821" className="hover:text-foreground transition-colors">
                   +225 01 438 488 21
@@ -109,10 +109,10 @@ export default function Footer() {
 
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs text-muted-light">
+          <p className="text-sm text-muted-light">
             &copy; 2020–2026 Mainsou ESN. Tous droits réservés.
           </p>
-          <p className="text-xs text-muted-light">
+          <p className="text-sm text-muted-light">
             Abidjan, Côte d&apos;Ivoire
           </p>
         </div>

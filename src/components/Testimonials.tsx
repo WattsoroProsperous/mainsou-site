@@ -53,13 +53,13 @@ export default function Testimonials() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <span className="text-xs font-medium text-muted-light uppercase tracking-widest">
+          <span className="text-sm font-medium text-muted-light uppercase tracking-widest">
             Témoignages
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+          <h2 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
             Ce que disent nos clients
           </h2>
-          <p className="mt-4 max-w-2xl text-lg text-muted leading-relaxed">
+          <p className="mt-4 max-w-2xl text-xl text-muted leading-relaxed">
             La satisfaction de nos clients est notre meilleure carte de visite.
           </p>
         </motion.div>
@@ -80,14 +80,14 @@ export default function Testimonials() {
               <div className="text-5xl font-serif text-accent/20 leading-none select-none">
                 &ldquo;
               </div>
-              <p className="mt-4 text-base text-foreground leading-relaxed">
+              <p className="mt-4 text-lg text-foreground leading-relaxed">
                 {t.quote}
               </p>
               <div className="mt-6 pt-6 border-t border-border-light">
-                <div className="text-sm font-semibold text-foreground">
+                <div className="text-base font-semibold text-foreground">
                   {t.author}
                 </div>
-                <div className="text-xs text-muted-light mt-0.5">
+                <div className="text-sm text-muted-light mt-0.5">
                   {t.company} — {t.sector}
                 </div>
               </div>

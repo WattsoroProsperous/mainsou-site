@@ -10,27 +10,30 @@
   --color-muted: #4B5563;
   --color-muted-light: #9CA3AF;
 
-  --color-accent: #2563EB;
-  --color-accent-hover: #1D4ED8;
-  --color-accent-light: #EFF6FF;
-  --color-accent-subtle: #DBEAFE;
+  --color-accent: #E8762D;
+  --color-accent-hover: #D4681F;
+  --color-accent-light: #FFF7ED;
+  --color-accent-subtle: #FFEDD5;
 
   --color-border: #E5E7EB;
   --color-border-light: #F3F4F6;
 
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-inter);
+  --font-sans: "Satoshi", system-ui, -apple-system, sans-serif;
+  --font-heading: "Satoshi", system-ui, -apple-system, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  font-size: 16px;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

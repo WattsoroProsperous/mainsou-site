@@ -55,20 +55,20 @@ export default function About() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-xs font-medium text-muted-light uppercase tracking-widest">
+            <span className="text-sm font-medium text-muted-light uppercase tracking-widest">
               À propos de nous
             </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+            <h2 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-foreground">
               Une équipe passionnée par l&apos;innovation numérique
             </h2>
-            <p className="mt-6 text-base text-muted leading-relaxed">
+            <p className="mt-6 text-lg text-muted leading-relaxed">
               Fondée en 2020 à Abidjan, Mainsou ESN est née de la conviction
               que les entreprises ivoiriennes méritent un accompagnement
               technologique de classe mondiale. Notre équipe de développeurs,
               ingénieurs et consultants combine expertise technique et
               connaissance approfondie du marché local.
             </p>
-            <p className="mt-4 text-base text-muted leading-relaxed">
+            <p className="mt-4 text-lg text-muted leading-relaxed">
               Nous concevons des solutions sur mesure — de l&apos;intelligence
               artificielle à la cybersécurité — pour permettre à nos clients de
               se concentrer sur l&apos;essentiel : leur croissance.
@@ -84,10 +84,10 @@ export default function About() {
                     {v.icon}
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-foreground">
+                    <div className="text-base font-semibold text-foreground">
                       {v.label}
                     </div>
-                    <div className="text-xs text-muted-light">{v.desc}</div>
+                    <div className="text-sm text-muted-light">{v.desc}</div>
                   </div>
                 </div>
               ))}
@@ -106,10 +106,10 @@ export default function About() {
                 key={stat.label}
                 className="rounded-2xl bg-background-alt p-6 text-center"
               >
-                <div className="text-3xl sm:text-4xl font-semibold text-foreground">
+                <div className="text-4xl sm:text-5xl font-semibold text-foreground">
                   {stat.value}
                 </div>
-                <div className="mt-1 text-sm text-muted">{stat.label}</div>
+                <div className="mt-1 text-base text-muted">{stat.label}</div>
               </div>
             ))}
           </motion.div>
