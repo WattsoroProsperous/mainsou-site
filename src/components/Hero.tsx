@@ -123,7 +123,7 @@ export default function Hero() {
             >
               {stats.map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-3xl sm:text-4xl font-bold text-foreground">
+                  <div className="font-heading text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-light mt-0.5">

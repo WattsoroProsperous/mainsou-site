@@ -78,7 +78,7 @@ export default function Navbar() {
                 height={36}
                 className="h-9 w-auto"
               />
-              <span className="text-lg font-semibold text-foreground tracking-tight">
+              <span className="font-heading text-lg font-semibold text-foreground tracking-tight">
                 Mainsou <span className="text-accent">ESN</span>
               </span>
             </a>
@@ -159,7 +159,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 + 0.1 }}
-                className="py-4 text-xl font-medium text-foreground border-b border-border-light"
+                className="py-4 font-heading text-2xl font-medium text-foreground border-b border-border-light"
               >
                 {item.label}
               </motion.a>

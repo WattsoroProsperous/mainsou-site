@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <link
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap"
           rel="stylesheet"
         />
       </head>

@@ -30,7 +30,7 @@ export default function Footer() {
                 height={32}
                 className="h-8 w-auto"
               />
-              <span className="text-base font-semibold text-foreground">
+              <span className="font-heading text-base font-semibold text-foreground tracking-tight">
                 Mainsou <span className="text-accent">ESN</span>
               </span>
             </div>

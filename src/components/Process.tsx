@@ -78,7 +78,7 @@ export default function Process() {
         >
           {steps.map((step) => (
             <motion.div key={step.number} variants={stepVariants}>
-              <div className="text-4xl font-semibold text-accent/15 leading-none">
+              <div className="font-heading text-4xl font-semibold text-accent/15 leading-none">
                 {step.number}
               </div>
               <h3 className="mt-3 text-lg font-semibold text-foreground">

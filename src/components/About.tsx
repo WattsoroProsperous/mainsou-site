@@ -106,7 +106,7 @@ export default function About() {
                 key={stat.label}
                 className="rounded-2xl bg-background-alt p-6 text-center"
               >
-                <div className="text-4xl sm:text-5xl font-semibold text-foreground">
+                <div className="font-heading text-4xl sm:text-5xl font-semibold text-foreground tracking-tight">
                   {stat.value}
                 </div>
                 <div className="mt-1 text-base text-muted">{stat.label}</div>

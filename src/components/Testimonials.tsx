@@ -77,7 +77,7 @@ export default function Testimonials() {
               variants={cardVariants}
               className="rounded-2xl border border-border/50 p-8 transition-all duration-200 hover:shadow-lg hover:shadow-gray-100"
             >
-              <div className="text-5xl font-serif text-accent/20 leading-none select-none">
+              <div className="font-heading text-5xl text-accent/20 leading-none select-none">
                 &ldquo;
               </div>
               <p className="mt-4 text-lg text-foreground leading-relaxed">
