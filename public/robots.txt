@@ -1,0 +1,6 @@
+# Robots.txt for mainsou-esn.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mainsou-esn.com/sitemap.xml
