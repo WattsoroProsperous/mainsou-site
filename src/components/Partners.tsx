@@ -26,7 +26,7 @@ function LogoRow() {
       {partners.map((p, i) => (
         <div
           key={i}
-          className="flex-shrink-0 flex items-center justify-center w-[180px] h-[90px] rounded-2xl bg-surface-alt border border-border/40 px-5"
+          className="flex-shrink-0 flex items-center justify-center w-[180px] h-[90px] bg-surface-alt border border-border/40 px-5"
         >
           <Image
             src={p.src}
