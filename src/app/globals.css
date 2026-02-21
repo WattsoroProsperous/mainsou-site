@@ -18,8 +18,8 @@
   --color-border: #E5E7EB;
   --color-border-light: #F3F4F6;
 
-  --font-sans: "Satoshi", system-ui, -apple-system, sans-serif;
-  --font-heading: "Satoshi", system-ui, -apple-system, sans-serif;
+  --font-sans: "Satoshi", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Satoshi", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 html {
@@ -31,7 +31,7 @@ html {
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-sans);
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
