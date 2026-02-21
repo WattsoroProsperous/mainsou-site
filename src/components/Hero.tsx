@@ -190,7 +190,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="absolute top-1/2 -right-12 -translate-y-1/2 rounded-xl bg-white border border-border shadow-lg px-4 py-2.5">
+              <div className="absolute top-1/2 -right-20 -translate-y-1/2 rounded-xl bg-white border border-border shadow-lg px-4 py-2.5">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4 text-accent">
