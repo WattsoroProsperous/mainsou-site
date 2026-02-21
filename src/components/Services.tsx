@@ -14,7 +14,6 @@ const services = [
     title: "Intégration IA",
     desc: "Intelligence artificielle intégrée dans vos processus pour optimiser la productivité et automatiser les tâches complexes.",
     tags: ["Machine Learning", "Chatbots IA", "OCR"],
-    span: "md:col-span-2",
   },
   {
     icon: (
@@ -26,7 +25,6 @@ const services = [
     title: "Digitalisation & Automatisation",
     desc: "Transformation digitale de vos processus métier complexes. Workflow intelligent pour gagner en efficacité.",
     tags: ["Process Métier", "Workflow", "ERP"],
-    span: "md:col-span-1",
   },
   {
     icon: (
@@ -40,7 +38,6 @@ const services = [
     title: "Cybersécurité & ISO 27001",
     desc: "Mise en œuvre de SMSI, audits de sécurité et accompagnement vers la certification ISO/IEC 27001.",
     tags: ["SMSI", "ISO 27001", "Audit"],
-    span: "md:col-span-1",
   },
   {
     icon: (
@@ -52,7 +49,6 @@ const services = [
     title: "Développement Mobile",
     desc: "Applications mobiles sur mesure, performantes et adaptées à vos besoins. iOS, Android & cross-platform.",
     tags: ["iOS", "Android", "Cross-platform"],
-    span: "md:col-span-2",
   },
   {
     icon: (
@@ -65,7 +61,6 @@ const services = [
     title: "Développement Web",
     desc: "Sites vitrines, e-commerce et applications web avec les technologies les plus modernes du marché.",
     tags: ["Sites Web", "E-commerce", "SaaS"],
-    span: "md:col-span-1",
   },
   {
     icon: (
@@ -76,23 +71,22 @@ const services = [
     title: "Conseil & Stratégie IT",
     desc: "Accompagnement stratégique dans votre transformation numérique. Audit, recommandations et suivi personnalisé.",
     tags: ["Audit IT", "Stratégie", "Consulting"],
-    span: "md:col-span-1",
   },
 ];
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.08 },
+    transition: { staggerChildren: 0.06 },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 8 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
   },
 };
 
@@ -100,71 +94,58 @@ export default function Services() {
   return (
     <section id="services" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-16"
         >
-          <span className="inline-block rounded-full border border-accent/20 bg-accent-pale px-4 py-1 text-xs font-semibold uppercase tracking-widest text-accent mb-4">
+          <span className="text-xs font-medium text-muted-light uppercase tracking-widest">
             Ce que nous faisons
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Nos{" "}
-            <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
-              Services
-            </span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+            Nos Services
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-            Des solutions technologiques sur mesure pour transformer votre entreprise
-            et accélérer votre croissance digitale.
+          <p className="mt-4 max-w-2xl text-lg text-muted leading-relaxed">
+            Des solutions technologiques sur mesure pour transformer votre
+            entreprise et accélérer votre croissance digitale.
           </p>
         </motion.div>
 
-        {/* Bento Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          viewport={{ once: true, margin: "-80px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((service, i) => (
             <motion.div
               key={i}
               variants={cardVariants}
-              className={`group relative rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:border-accent/20 hover:shadow-[0_8px_30px_rgba(212,132,42,0.06)] ${service.span}`}
+              className="group rounded-2xl border border-border/50 p-8 transition-all duration-200 hover:shadow-lg hover:shadow-gray-100 hover:border-border"
             >
-              {/* Hover gradient overlay */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-accent-light text-accent">
+                {service.icon}
+              </div>
 
-              <div className="relative">
-                {/* Icon */}
-                <div className="mb-5 inline-flex items-center justify-center w-11 h-11 rounded-xl bg-accent-pale text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
-                  {service.icon}
-                </div>
+              <h3 className="mt-4 text-lg font-semibold text-foreground">
+                {service.title}
+              </h3>
+              <p className="mt-2 text-sm text-muted leading-relaxed">
+                {service.desc}
+              </p>
 
-                {/* Content */}
-                <h3 className="font-heading text-lg font-bold text-foreground mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-muted leading-relaxed mb-5">
-                  {service.desc}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {service.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-border bg-surface-alt px-3 py-1 text-xs font-medium text-muted"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex flex-wrap gap-2 mt-5">
+                {service.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-surface-alt px-2.5 py-0.5 text-xs font-medium text-muted-light"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </motion.div>
           ))}

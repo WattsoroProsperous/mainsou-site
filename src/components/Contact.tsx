@@ -60,26 +60,22 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-surface-alt">
+    <section id="contact" className="py-24 sm:py-32 bg-background-alt">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Left: Info */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
           >
-            <span className="inline-block rounded-full border border-accent/20 bg-accent-pale px-4 py-1 text-xs font-semibold uppercase tracking-widest text-accent mb-4">
+            <span className="text-xs font-medium text-muted-light uppercase tracking-widest">
               Parlons de votre projet
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
-              Contactez-
-              <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
-                nous
-              </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+              Contactez-nous
             </h2>
-            <p className="text-lg text-muted leading-relaxed mb-10">
+            <p className="mt-4 text-lg text-muted leading-relaxed mb-10">
               Vous avez un projet en tête ? Discutons ensemble de la meilleure
               solution pour atteindre vos objectifs.
             </p>
@@ -87,11 +83,11 @@ export default function Contact() {
             <div className="space-y-6">
               {contactInfo.map((info, i) => (
                 <div key={i} className="flex items-start gap-4">
-                  <div className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-accent-pale text-accent">
+                  <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-accent-light text-accent">
                     {info.icon}
                   </div>
                   <div>
-                    <span className="block text-xs font-semibold uppercase tracking-wider text-muted-light mb-0.5">
+                    <span className="block text-xs font-medium uppercase tracking-wider text-muted-light mb-0.5">
                       {info.label}
                     </span>
                     {info.href ? (
@@ -104,7 +100,9 @@ export default function Contact() {
                         {info.value}
                       </a>
                     ) : (
-                      <span className="text-foreground font-medium">{info.value}</span>
+                      <span className="text-foreground font-medium">
+                        {info.value}
+                      </span>
                     )}
                   </div>
                 </div>
@@ -112,14 +110,13 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Right: Form */}
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl border border-border bg-surface p-8 sm:p-10 space-y-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-2xl border border-border bg-white p-8 sm:p-10 shadow-sm space-y-6"
           >
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
@@ -129,7 +126,7 @@ export default function Contact() {
                 id="name"
                 type="text"
                 required
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-all duration-200 focus:border-accent focus:ring-2 focus:ring-accent/10"
+                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
                 placeholder="Votre nom"
               />
             </div>
@@ -141,7 +138,7 @@ export default function Contact() {
                 id="email"
                 type="email"
                 required
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-all duration-200 focus:border-accent focus:ring-2 focus:ring-accent/10"
+                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
                 placeholder="votre@email.com"
               />
             </div>
@@ -153,7 +150,7 @@ export default function Contact() {
                 id="subject"
                 type="text"
                 required
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-all duration-200 focus:border-accent focus:ring-2 focus:ring-accent/10"
+                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
                 placeholder="L'objet de votre message"
               />
             </div>
@@ -165,17 +162,17 @@ export default function Contact() {
                 id="message"
                 rows={5}
                 required
-                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-all duration-200 focus:border-accent focus:ring-2 focus:ring-accent/10 resize-y"
+                className="w-full rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20 resize-y"
                 placeholder="Décrivez votre projet..."
               />
             </div>
             <button
               type="submit"
               disabled={submitted}
-              className={`w-full flex items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold text-white transition-all duration-300 ${
+              className={`w-full flex items-center justify-center gap-2 rounded-lg py-3 text-sm font-medium text-white transition-colors ${
                 submitted
-                  ? "bg-green-500"
-                  : "bg-accent shadow-[0_4px_16px_rgba(212,132,42,0.3)] hover:shadow-[0_8px_30px_rgba(212,132,42,0.4)] hover:-translate-y-0.5"
+                  ? "bg-emerald-600"
+                  : "bg-foreground hover:bg-foreground/90"
               }`}
             >
               {submitted ? (
