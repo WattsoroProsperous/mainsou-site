@@ -26,14 +26,14 @@ function LogoRow() {
       {partners.map((p, i) => (
         <div
           key={i}
-          className="flex-shrink-0 flex items-center justify-center w-[140px] h-[70px] px-4"
+          className="flex-shrink-0 flex items-center justify-center w-[180px] h-[90px] rounded-2xl bg-white border border-border/60 px-5 shadow-sm"
         >
           <Image
             src={p.src}
             alt={p.alt}
-            width={100}
-            height={60}
-            className="max-h-[48px] w-auto object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+            width={140}
+            height={80}
+            className="max-h-[60px] w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
           />
         </div>
       ))}
@@ -43,27 +43,37 @@ function LogoRow() {
 
 export default function Partners() {
   return (
-    <section id="partenaires" className="py-12 sm:py-16 overflow-hidden">
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="text-base text-muted-light text-center mb-8"
-      >
-        Ils nous font confiance
-      </motion.p>
+    <section id="partenaires" className="py-20 sm:py-24 bg-background-alt overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <span className="text-sm font-medium text-muted-light uppercase tracking-widest">
+            Nos partenaires
+          </span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+            Ils nous font confiance
+          </h2>
+          <p className="mt-4 text-lg text-muted">
+            Plus de 15 entreprises nous accompagnent dans leur transformation digitale.
+          </p>
+        </motion.div>
+      </div>
 
       <div
         className="relative"
         style={{
           maskImage:
-            "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+            "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
           WebkitMaskImage:
-            "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+            "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
         }}
       >
-        <div className="flex gap-6 animate-marquee w-max">
+        <div className="flex gap-5 animate-marquee w-max">
           <LogoRow />
           <LogoRow />
         </div>
