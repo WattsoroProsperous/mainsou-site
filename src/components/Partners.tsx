@@ -55,7 +55,7 @@ export default function Partners() {
           <span className="inline-block rounded-full border border-accent/20 bg-accent-pale px-4 py-1 text-xs font-semibold uppercase tracking-widest text-accent mb-4">
             Ils nous font confiance
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
             Nos{" "}
             <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
               Partenaires

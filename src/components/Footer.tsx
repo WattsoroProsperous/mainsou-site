@@ -31,7 +31,7 @@ export default function Footer() {
                 height={36}
                 className="h-9 w-auto"
               />
-              <span className="text-base font-bold text-foreground">
+              <span className="font-heading text-base font-bold text-foreground">
                 Mainsou <span className="text-accent">ESN</span>
               </span>
             </div>
@@ -43,7 +43,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Navigation</h4>
+            <h4 className="font-heading text-sm font-semibold text-foreground mb-4">Navigation</h4>
             <ul className="space-y-2.5">
               {navigation.map((item) => (
                 <li key={item.href}>
@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Services</h4>
+            <h4 className="font-heading text-sm font-semibold text-foreground mb-4">Services</h4>
             <ul className="space-y-2.5">
               {services.map((s) => (
                 <li key={s}>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Contact</h4>
+            <h4 className="font-heading text-sm font-semibold text-foreground mb-4">Contact</h4>
             <ul className="space-y-2.5 text-sm text-muted">
               <li>
                 <a href="tel:+2250143848821" className="hover:text-accent transition-colors">

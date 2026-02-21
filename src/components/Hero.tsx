@@ -64,7 +64,7 @@ export default function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold tracking-tight leading-[1.08] mb-6 text-navy"
+              className="font-heading text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold tracking-tight leading-[1.08] mb-6 text-navy"
             >
               L&apos;Innovation{" "}
               <span className="bg-gradient-to-r from-[#D4842A] via-[#E8A04E] to-[#D4842A] bg-clip-text text-transparent">
@@ -139,7 +139,7 @@ export default function Hero() {
             >
               {stats.map((stat, i) => (
                 <div key={i}>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-navy">
+                  <div className="font-heading text-3xl sm:text-4xl font-extrabold text-navy">
                     {stat.value}
                   </div>
                   <div className="mt-0.5 text-sm font-medium text-muted">{stat.label}</div>

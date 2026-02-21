@@ -73,7 +73,7 @@ export default function Contact() {
             <span className="inline-block rounded-full border border-accent/20 bg-accent-pale px-4 py-1 text-xs font-semibold uppercase tracking-widest text-accent mb-4">
               Parlons de votre projet
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
               Contactez-
               <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
                 nous

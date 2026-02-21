@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Sora, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -30,7 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${jakarta.variable} antialiased`}>{children}</body>
+      <body className={`${sora.variable} ${jakarta.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

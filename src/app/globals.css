@@ -15,6 +15,7 @@
   --color-border: #E2DCD4;
   --color-border-light: #EDE9E3;
   --font-sans: var(--font-jakarta);
+  --font-heading: var(--font-sora);
 }
 
 html {

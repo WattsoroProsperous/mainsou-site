@@ -111,7 +111,7 @@ export default function Services() {
           <span className="inline-block rounded-full border border-accent/20 bg-accent-pale px-4 py-1 text-xs font-semibold uppercase tracking-widest text-accent mb-4">
             Ce que nous faisons
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
             Nos{" "}
             <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
               Services
@@ -147,7 +147,7 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-foreground mb-2">
+                <h3 className="font-heading text-lg font-bold text-foreground mb-2">
                   {service.title}
                 </h3>
                 <p className="text-sm text-muted leading-relaxed mb-5">

@@ -76,7 +76,7 @@ export default function Navbar() {
                 height={40}
                 className="h-10 w-auto"
               />
-              <span className="text-lg font-bold tracking-tight text-foreground">
+              <span className="font-heading text-lg font-bold tracking-tight text-foreground">
                 Mainsou <span className="text-accent">ESN</span>
               </span>
             </a>
