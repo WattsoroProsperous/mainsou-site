@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PLOT</title>
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="PLOT">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/Icon-152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/Icon-180.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1E3A8A">
+
+  <style>
+    noscript {
+      display: block;
+      padding: 20px;
+      text-align: center;
+      background-color: #fff3cd;
+      border: 1px solid #ffeaa7;
+      margin: 20px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <p>Pour utiliser PLOT, veuillez activer JavaScript dans votre navigateur.</p>
+  </noscript>
+  <script>
+    // Configuration pour la gestion des routes Flutter sur le web
+    window.addEventListener('load', function(ev) {
+      const loadingElement = document.getElementById('loading');
+      if (loadingElement) {
+        loadingElement.style.display = 'none';
+      }
+    });
+
+    // Gérer les liens de récupération de mot de passe
+    window.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const hashParams = new URLSearchParams(window.location.hash.substring(1));
+      
+      const isRecovery = urlParams.get('type') === 'recovery' || 
+                        hashParams.get('type') === 'recovery' ||
+                        window.location.hash.includes('type=recovery');
+      
+      if (isRecovery) {
+        console.log('Lien de récupération de mot de passe détecté');
+      }
+    });
+  </script>
+  
+    <!-- ÉTAPE 1 : Initialisation immédiate -->
+  <script>
+    window.ocrResults = {};
+    window.ocrReady = false;
+    console.log('✅ window.ocrResults initialisé');
+  </script>
+
+  <!-- ÉTAPE 2 : Charger PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  </script>
+
+  <!-- ÉTAPE 3 : Charger Tesseract.js -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <!-- ÉTAPE 4 : Fonctions OCR -->
+  <script>
+    // Fonction pour convertir PDF en image
+    window.pdfToImage = async function(pdfData) {
+      console.log('📄 Conversion PDF en image...');
+      try {
+        const loadingTask = pdfjsLib.getDocument({ data: pdfData });
+        const pdf = await loadingTask.promise;
+        console.log(`📄 PDF chargé: ${pdf.numPages} page(s)`);
+        
+        const page = await pdf.getPage(1);
+        const viewport = page.getViewport({ scale: 2.0 });
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        
+        await page.render({ canvasContext: context, viewport: viewport }).promise;
+        console.log('✅ PDF converti en image');
+        return canvas;
+      } catch (error) {
+        console.error('❌ Erreur conversion PDF:', error);
+        throw error;
+      }
+    };
+    
+    // Fonction pour convertir PDF en liste d'images (toutes les pages)
+    window.pdfToImages = async function(pdfData, scale) {
+      console.log('📄 Conversion PDF multi-pages en images...');
+      try {
+        const loadingTask = pdfjsLib.getDocument({ data: pdfData });
+        const pdf = await loadingTask.promise;
+        const numPages = pdf.numPages;
+        console.log(`📄 PDF chargé: ${numPages} page(s)`);
+
+        const results = [];
+        for (let i = 1; i <= numPages; i++) {
+          const page = await pdf.getPage(i);
+          const viewport = page.getViewport({ scale: scale || 2.0 });
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          await page.render({ canvasContext: context, viewport: viewport }).promise;
+
+          // Convertir en base64 PNG
+          const dataUrl = canvas.toDataURL('image/png');
+          results.push(dataUrl);
+          console.log(`✅ Page ${i}/${numPages} convertie`);
+        }
+
+        return results;
+      } catch (error) {
+        console.error('❌ Erreur conversion PDF multi-pages:', error);
+        throw error;
+      }
+    };
+
+    // Fonction OCR principale
+    window.performTesseractOCR = function(requestId, imageData, languages) {
+      console.log(`🔍 Début OCR Tesseract.js [${requestId}]...`);
+      window.ocrResults[requestId] = { status: 'processing' };
+      
+      (async () => {
+        try {
+          let inputImage = imageData;
+          
+          if (typeof imageData === 'string' && imageData.startsWith('data:application/pdf')) {
+            console.log('📄 PDF détecté, conversion en image...');
+            const base64Data = imageData.split(',')[1];
+            const pdfBytes = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
+            const canvas = await window.pdfToImage(pdfBytes);
+            inputImage = canvas;
+          }
+          
+          const worker = await Tesseract.createWorker(languages, 1, {
+            logger: m => {
+              if (m.status === 'recognizing text') {
+                const progress = Math.round(m.progress * 100);
+                console.log(`📊 Progression OCR [${requestId}]: ${progress}%`);
+              }
+            }
+          });
+          
+          const { data: { text, confidence } } = await worker.recognize(inputImage);
+          await worker.terminate();
+          
+          console.log(`✅ OCR terminé [${requestId}]: ${text.length} caractères (confiance: ${confidence.toFixed(2)}%)`);
+          
+          window.ocrResults[requestId] = { status: 'success', text: text, confidence: confidence };
+        } catch (error) {
+          console.error(`❌ Erreur OCR [${requestId}]:`, error);
+          window.ocrResults[requestId] = { status: 'error', error: error.message || String(error) };
+        }
+      })();
+    };
+    
+    window.ocrReady = true;
+    console.log('✅ Fonctions OCR chargées (PDF + Images)');
+  </script>
+
+  <script src="flutter.js" defer></script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
